@@ -11,8 +11,8 @@ export class TilesetsAPI {
   }
 
   /// Upload a newline-delimited geojson file for use as a data source
-  uploadSource(stream: NodeJS.ReadableStream, name: string) {
-    uploadSource(this.username, this.accessToken, stream, name);
+  async uploadSource(stream: NodeJS.ReadableStream, name: string) {
+    return uploadSource(this.username, this.accessToken, stream, name);
   }
 
   /// Upload a recipe for generating tilesets

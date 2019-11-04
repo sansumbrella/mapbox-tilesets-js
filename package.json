@@ -6,8 +6,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build-ts",
     "build-ts": "tsc",
-    "build": "npm run build-ts"
+    "watch": "npm run watch-ts",
+    "watch-ts": "tsc --watch"
   },
   "author": "",
   "license": "BSD-3-Clause",
@@ -16,7 +18,9 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/node": "^12.12.5",
+    "@types/yargs": "^13.0.3",
     "dotenv": "^8.2.0",
     "eslint": "^6.6.0",
     "ts-node": "^8.4.1",
