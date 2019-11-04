@@ -8,13 +8,10 @@ export async function uploadSource(user, accessToken, stream, name) {
     const formData = new FormData();
     formData.append("file", stream);
 
-    console.log("making request to url", url);
     const response = await fetch(url, {
       method: "POST",
       body: formData
     });
-
-    console.log("finished making request");
 
     const text = await response.text();
     if (response.ok) {

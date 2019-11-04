@@ -1,5 +1,6 @@
 import { uploadSource } from "./uploadSource";
 import { uploadRecipe } from "./uploadRecipe";
+import { validateRecipe } from "./validateRecipe";
 
 export class TilesetsAPI {
   accessToken: string;
@@ -16,7 +17,16 @@ export class TilesetsAPI {
   }
 
   /// Upload a recipe for generating tilesets
-  uploadRecipe(recipe: JSON, name: string) {
-    uploadRecipe(this.username, this.accessToken, recipe, name);
+  async uploadRecipe(recipe: string, name: string) {
+    return uploadRecipe(this.username, this.accessToken, recipe, name);
+  }
+
+  /// Validate recipe against spec
+  async validateRecipe(recipe: string) {
+    return validateRecipe(this.accessToken, recipe);
+  }
+
+  createRecipeTemplate(sourceName: string) {
+    return { sorry: "bad template" };
   }
 }

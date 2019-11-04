@@ -11,8 +11,11 @@
     "watch": "npm run watch-ts",
     "watch-ts": "tsc --watch"
   },
-  "author": "",
+  "author": "David Wicks",
   "license": "BSD-3-Clause",
+  "bin": {
+    "tilesets-js": "dist/cli.js"
+  },
   "dependencies": {
     "form-data": "^2.5.1",
     "node-fetch": "^2.6.0"
