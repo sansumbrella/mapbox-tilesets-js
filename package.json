@@ -1,0 +1,26 @@
+{
+  "name": "tilesets",
+  "version": "1.0.0",
+  "description": "scripts for working with the Mapbox tilesets API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ts": "tsc",
+    "build": "npm run build-ts"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "form-data": "^2.5.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4",
+    "yargs": "^14.2.0"
+  }
+}
