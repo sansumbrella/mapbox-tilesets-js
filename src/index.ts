@@ -1,6 +1,7 @@
 import { uploadSource } from "./uploadSource";
 import { uploadRecipe } from "./uploadRecipe";
 import { validateRecipe } from "./validateRecipe";
+import { publishTileset } from "./publishTileset";
 
 export class TilesetsAPI {
   accessToken: string;
@@ -24,6 +25,10 @@ export class TilesetsAPI {
   /// Validate recipe against spec
   async validateRecipe(recipe: string) {
     return validateRecipe(this.accessToken, recipe);
+  }
+
+  async publishTileset(name: string) {
+    return publishTileset(this.accessToken, `${this.username}.${name}`);
   }
 
   createRecipeTemplate(sourceName: string) {

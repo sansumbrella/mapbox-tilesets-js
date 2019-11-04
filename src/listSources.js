@@ -1,7 +1,7 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 /// Enumerates the tileset sources associated with the giver user
-async function listSources(user, accessToken) {
+export async function listSources(user, accessToken) {
     const url = `https://api.mapbox.com/tilesets/v1/sources/${user}?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
     try {
         const response = await fetch(url);
@@ -15,10 +15,6 @@ async function listSources(user, accessToken) {
     } catch (err) {
         return { error: err.message };
     }
-}
-
-module.exports = {
-    listSources
 }
 
 async function listSourcesCommand(argv) {

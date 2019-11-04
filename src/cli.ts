@@ -86,7 +86,8 @@ function main() {
         const { recipe, name, username, accessToken } = args;
         const file = path.resolve(recipe as string);
         const recipeData = JSON.parse(fs.readFileSync(file).toString());
-        const { success, error } = await uploadRecipe(username!, accessToken!, recipeData, name as string);
+        const tilesets = new TilesetsAPI(username!, accessToken!);
+        const { success, error } = await tilesets.uploadRecipe(recipeData, name as string);
         if (success) {
           console.log("successfully uploaded recipe", success);
         }
@@ -132,6 +133,27 @@ function main() {
           console.log(success);
         } catch (err) {
           console.error(`Error loading recipe from ${recipe}: ${err.message}`);
+        }
+      }
+    )
+    .command(
+      "publish",
+      "publish a tileset",
+      yargs => {
+        yargs.option("name", {
+          describe: "name of recipe to publish. This should be a tileset id with the `username.` prefix omitted.",
+          demandOption: true
+        });
+      },
+      async args => {
+        const { name, username, accessToken } = args;
+        const tilesets = new TilesetsAPI(username!, accessToken!);
+        const { error, success } = await tilesets.publishTileset(name as string);
+        if (error) {
+          console.error(error);
+        }
+        if (success) {
+          console.log(success);
         }
       }
     )
