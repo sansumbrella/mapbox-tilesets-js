@@ -1,7 +1,9 @@
-import { uploadSource } from "./uploadSource";
-import { uploadRecipe } from "./uploadRecipe";
-import { validateRecipe } from "./validateRecipe";
-import { publishTileset } from "./publishTileset";
+import {listSources} from './listSources';
+import {listTilesets} from './listTilesets';
+import {publishTileset} from './publishTileset';
+import {uploadRecipe} from './uploadRecipe';
+import {uploadSource} from './uploadSource';
+import {validateRecipe} from './validateRecipe';
 
 export class TilesetsAPI {
   accessToken: string;
@@ -31,7 +33,17 @@ export class TilesetsAPI {
     return publishTileset(this.accessToken, `${this.username}.${name}`);
   }
 
+  /// Enumerates all tilesets owned by the given account
+  async listTilesets() {
+    return listTilesets(this.username, this.accessToken);
+  }
+
+  /// Enumerates all tileset sources owned by the given account
+  async listSources() {
+    return listSources(this.username, this.accessToken);
+  }
+
   createRecipeTemplate(sourceName: string) {
-    return { sorry: "bad template" };
+    return {sorry: 'bad template'};
   }
 }

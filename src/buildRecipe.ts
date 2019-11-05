@@ -2,18 +2,23 @@
 /// Returns a basic JSON Tileset recipe
 /// Parameterized on username and sourcename
 ///
-export function buildRecipe(user: string, sourceName: string) {
+
+interface Params {
+  user: string;
+  sourceName: string;
+  layerName: string;
+}
+
+export function buildRecipe(params: Params) {
+  const {user, sourceName, layerName} = params;
   return {
-    version: 1,
-    layers: {
-      parking_blocks: {
+    version: 1, layers: {
+      [layerName]: {
         source: `mapbox://tileset-source/${user}/${sourceName}`,
         minzoom: 4,
         maxzoom: 22,
-        features: {
-          attributes: {}
-        }
+        features: {attributes: {allowed_output: []}}
       }
     }
-  };
-}
+  }
+};
