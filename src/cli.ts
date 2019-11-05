@@ -172,7 +172,17 @@ function main() {
                 const response = await tilesets.listSources();
                 console.log(response);
               })
-
+          .command(
+              'delete-source', 'delete a source',
+              yargs => {
+                yargs.option('source', {alias: ['src'], type: 'string'});
+              },
+              async args => {
+                const {accessToken, source, username} = args;
+                const tilesets = new TilesetsAPI(username!, accessToken!);
+                const response = await tilesets.deleteSource(source as string);
+                console.log(response);
+              })
           .parse();
 }
 

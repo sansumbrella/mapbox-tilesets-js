@@ -1,3 +1,4 @@
+import {deleteSource} from './deleteSource';
 import {listSources} from './listSources';
 import {listTilesets} from './listTilesets';
 import {publishTileset} from './publishTileset';
@@ -41,6 +42,16 @@ export class TilesetsAPI {
   /// Enumerates all tileset sources owned by the given account
   async listSources() {
     return listSources(this.username, this.accessToken);
+  }
+
+  async deleteSource(source: string) {
+    const result = await deleteSource(this.username, this.accessToken, source);
+    switch (result.type) {
+      case 'success':
+        return `successfully deleted source ${this.username}.${source}`;
+      case 'failure':
+        return `failed to delete source ${this.username}.${source}`;
+    }
   }
 
   createRecipeTemplate(sourceName: string) {
