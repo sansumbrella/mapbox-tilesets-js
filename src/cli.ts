@@ -144,19 +144,12 @@ function main() {
                 }
               })
           .command(
-              'publish', 'publish a tileset',
-              yargs => {
-                yargs.option('name', {
-                  describe:
-                      'name of recipe to publish. This should be a tileset id with the `username.` prefix omitted.',
-                  demandOption: true
-                });
-              },
+              'publish <tileset>', 'publish a tileset', yargs => {},
               async args => {
-                const {name, username, accessToken} = args;
+                const {tileset, username, accessToken} = args;
                 const tilesets = new TilesetsAPI(username!, accessToken!);
                 const {error, success} =
-                    await tilesets.publishTileset(name as string);
+                    await tilesets.publishTileset(tileset as string);
                 if (error) {
                   console.error(error);
                 }
@@ -165,11 +158,21 @@ function main() {
                 }
               })
           .command(
-              'list-sources', 'list source objects', yargs => {},
+              'list-sources', 'list source data belonging to account',
+              yargs => {},
               async args => {
                 const {accessToken, username} = args;
                 const tilesets = new TilesetsAPI(username!, accessToken!);
                 const response = await tilesets.listSources();
+                console.log(response);
+              })
+          .command(
+              'list-tilesets', 'list tilesets belonging to account',
+              yargs => {},
+              async args => {
+                const {accessToken, username} = args;
+                const tilesets = new TilesetsAPI(username!, accessToken!);
+                const response = await tilesets.listTilesets();
                 console.log(response);
               })
           .command(

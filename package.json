@@ -1,6 +1,6 @@
 {
   "name": "tilesets",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "scripts for working with the Mapbox tilesets API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
