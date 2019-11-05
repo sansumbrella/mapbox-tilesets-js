@@ -1,5 +1,5 @@
 {
-  "name": "tilesets",
+  "name": "@sansumbrella/mapbox-tilesets",
   "version": "0.1.0",
   "description": "scripts for working with the Mapbox tilesets API",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "tilesets-js": "dist/cli.js"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "form-data": "^2.5.1",
     "node-fetch": "^2.6.0"
   },
@@ -25,7 +26,6 @@
     "@types/node": "^12.12.5",
     "@types/node-fetch": "^2.5.3",
     "@types/yargs": "^13.0.3",
-    "dotenv": "^8.2.0",
     "eslint": "^6.6.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4",
