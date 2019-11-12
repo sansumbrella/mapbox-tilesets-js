@@ -8,7 +8,7 @@ export async function listSources(user, accessToken): Promise<string[]> {
     const response = await fetch(url);
     if (response.ok) {
       const json = await response.json();
-      return json.map(source => source.id).join('\n');
+      return json.map(source => source.id);
     } else {
       const text = await response.text();
       return [`error: ${text}`];
