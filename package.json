@@ -9,7 +9,8 @@
     "build": "npm run build-ts",
     "build-ts": "tsc",
     "watch": "npm run watch-ts",
-    "watch-ts": "tsc --watch"
+    "watch-ts": "tsc --watch",
+    "deploy": "npm run build && npm publish"
   },
   "author": "David Wicks",
   "license": "BSD-3-Clause",
