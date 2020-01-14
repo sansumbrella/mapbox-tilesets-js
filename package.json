@@ -1,5 +1,5 @@
 {
-  "name": "@mbxsolutions/mapbox-tilesets",
+  "name": "@sansumbrella/mapbox-tilesets",
   "version": "0.1.4",
   "description": "scripts for working with the Mapbox tilesets API",
   "main": "dist/index.js",
@@ -31,8 +31,5 @@
     "eslint": "^6.6.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
