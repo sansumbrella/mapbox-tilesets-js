@@ -1,6 +1,6 @@
 {
   "name": "@sansumbrella/mapbox-tilesets",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "David Wicks (https://sansumbrella.com/)",
   "license": "BSD-3-Clause",
   "description": "scripts for working with the Mapbox tilesets API",
