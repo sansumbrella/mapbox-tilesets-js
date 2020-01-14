@@ -1,7 +1,14 @@
 {
   "name": "@sansumbrella/mapbox-tilesets",
   "version": "0.1.5",
+  "author": "David Wicks (https://sansumbrella.com/)",
+  "license": "BSD-3-Clause",
   "description": "scripts for working with the Mapbox tilesets API",
+  "homepage": "https://github.com/sansumbrella/mapbox-tilesets-js#readme",
+  "repository": {
+    "url": "https://github.com/sansumbrella/mapbox-tilesets-js.git",
+    "type": "git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,8 +19,6 @@
     "watch-ts": "tsc --watch",
     "deploy": "npm run build && npm publish"
   },
-  "author": "David Wicks",
-  "license": "BSD-3-Clause",
   "bin": {
     "tilesets-js": "dist/cli.js"
   },
