@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 async function retrieveGlobalQueueStatus(accessToken) {
     try {
-        const url = `https://api.mapbox.com/tilesets/v1/queue?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
+        const url = `https://api.mapbox.com/tilesets/v1/queue?access_token=${accessToken}&pluginName=RealtimeMappingArchitecture`;
         const response = await fetch(url, {
             method: "PUT"
         });

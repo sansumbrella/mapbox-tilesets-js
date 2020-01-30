@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 /// Runs validation against server
 export async function validateRecipe(accessToken, recipeData) {
   try {
-    const url = `https://api.mapbox.com/tilesets/v1/validateRecipe?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
+    const url = `https://api.mapbox.com/tilesets/v1/validateRecipe?access_token=${accessToken}&pluginName=RealtimeMappingArchitecture`;
     const response = await fetch(url, {
       headers: {
         "Content-Type": "application/json"

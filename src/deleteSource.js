@@ -6,7 +6,7 @@ const FormData = require("form-data");
 // Opens the specified file and uploads
 async function deleteSource(user, accessToken, name) {
     try {
-        const url = `https://api.mapbox.com/tilesets/v1/sources/${user}/${name}?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
+        const url = `https://api.mapbox.com/tilesets/v1/sources/${user}/${name}?access_token=${accessToken}&pluginName=RealtimeMappingArchitecture`;
         const response = await fetch(url, {
             method: "DELETE"
         });

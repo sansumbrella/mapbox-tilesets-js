@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 async function retrieveTilesetStatus(accessToken, id) {
-    const url = `https://api.mapbox.com/tilesets/v1/${id}/status?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
+    const url = `https://api.mapbox.com/tilesets/v1/${id}/status?access_token=${accessToken}&pluginName=RealtimeMappingArchitecture`;
 
     try {
         const response = await fetch(url);

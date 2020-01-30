@@ -4,7 +4,7 @@ const FormData = require("form-data");
 // Attaches file stream to form and uploads to tilesets API
 export async function uploadSource(user, accessToken, stream, name) {
   try {
-    const url = `https://api.mapbox.com/tilesets/v1/sources/${user}/${name}?access_token=${accessToken}&pluginName=RealtimePOIBlueprint`;
+    const url = `https://api.mapbox.com/tilesets/v1/sources/${user}/${name}?access_token=${accessToken}&pluginName=RealtimeMappingArchitecture`;
     const formData = new FormData();
     formData.append("file", stream);
 
